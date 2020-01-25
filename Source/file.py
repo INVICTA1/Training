@@ -22,12 +22,16 @@ def extract_txt_from_pdf(pdf_path):
         return text
 
 
-if __name__ == '__main__':
-    pdf_path = r'..\Recourse\Input\fw9.pdf'
+def output_path(pdf_path):
     full_name = path.basename(pdf_path)
     name = path.splitext(full_name)[0]
     way = "..\Recourse\Output\ " + name + ".txt"
-    with  io.open(way, 'w+', encoding="utf-8") as txt_file:
+    return way
+
+
+if __name__ == '__main__':
+    pdf_path = r'..\Recourse\Input\fw9.pdf'
+    with  io.open(output_path(pdf_path), 'w+', encoding="utf-8") as txt_file:
         text = extract_txt_from_pdf(pdf_path)
         sentences = re.split('[.!?]\s', text)
         for sentence in sentences:
