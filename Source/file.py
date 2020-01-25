@@ -1,4 +1,5 @@
 import io, re
+from os import path
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
 from pdfminer.pdfpage import PDFPage
@@ -22,9 +23,12 @@ def extract_txt_from_pdf(pdf_path):
 
 
 if __name__ == '__main__':
-    with  io.open('result.txt', 'w+', encoding="utf-8") as txt_file:
-        text = extract_txt_from_pdf(r'..\Books\fw9.pdf')
-
-        sentences = re.split('[.!?]\s',text )
+    pdf_path = r'..\Recourse\Input\fw9.pdf'
+    full_name = path.basename(pdf_path)
+    name = path.splitext(full_name)[0]
+    way = "..\Recourse\Output\ " + name + ".txt"
+    with  io.open(way, 'w+', encoding="utf-8") as txt_file:
+        text = extract_txt_from_pdf(pdf_path)
+        sentences = re.split('[.!?]\s', text)
         for sentence in sentences:
             txt_file.write(str(sentence) + '.\n')
