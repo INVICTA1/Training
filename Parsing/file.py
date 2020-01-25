@@ -23,6 +23,8 @@ def extract_txt_from_pdf(pdf_path):
 
 if __name__ == '__main__':
     with  io.open('txt.txt', 'w+', encoding="utf-8") as txt_file:
+        # the name od variable is wrong. Would be better ti use 'sentences'
+        # what will happened if the text has (! ?) characters?
         text = re.split('[.] ', extract_txt_from_pdf(r'..\Books\fw9.pdf'))
-        for offer in text:
+        for offer in text: # the name od variable is wrong. Would be better ti use 'sentence'
             txt_file.write(str(offer)+'.\n')
