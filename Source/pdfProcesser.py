@@ -1,4 +1,4 @@
-import io, re
+import io
 from os import path
 from pdfminer.converter import TextConverter
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
