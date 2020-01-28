@@ -18,4 +18,12 @@ def task1():
             print(num, ':Taxi')
         else:
             print(num, ':Fail')
+
+
 task1()
+
+
+def task2():
+    regex = '\w*\.*[^..]@[^..]|[^@@]|'
+    text = ""
+    a = re.findall(regex, text, flags=re.ASCII)
