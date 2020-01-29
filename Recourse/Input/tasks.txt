@@ -32,8 +32,11 @@ PS. Совсем не обязательно делать все проверк�
 Иван Иванович!
 Нужен ответ на письмо от ivanoff@ivan-chai.ru. Не забудьте поставить в копию serge'o-lupin@mail.ru- это важно.
 NO: foo.@ya.ru, foo@.ya.ru PARTLY: boo@ya_ru, -boo@ya.ru-, foo№boo@ya.ru
-ivanoff@ivan-chai.ru
-serge'o-lupin@mail.ru
-boo@ya
+ivan@off@ivan-chai.ru
+serge'o-lupi..n@@mail.ru
+bo..o@ya
+boo.@ya.ru
 boo@ya.ru
-boo@ya.ru
+ivan@ivan-chai..ru
+iv..an@ivan-chai.ru
+

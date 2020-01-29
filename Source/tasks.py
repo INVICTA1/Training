@@ -22,9 +22,20 @@ def task1():
 
 def task2():
     path_txt = '../Recourse/Input/tasks.txt'
-    with open(path_txt, 'r') as file:
-        text=file.read()
-        regex = '[\w*\'_-]+@[\w\d.\'_-]+'
-        emails = re.findall(regex, text, flags=re.ASCII)
-        print()
+    emails = []
+    regex_email = "[\d\w\'\._-]+[^\s.;'@,\-]@[^\s.;'@,\-][\d\w\'\._-]+"
+    regex_check_last_symbol = '[^\s.+-][\w*\'\._-]+[^\s.+-]@[^\s.+-][\w\d\.\'_-]+[^.+\s-]'
+    regex_check_on_point = '[\w*\'\._-]*(\.\.)[\w*\'\._-]*@[\w*\'\._-]*|[\w*\'\._-]*@[\w*\'\._-]*(\.\.)[\w*\'\._-]*'
+    with open(path_txt, 'r', encoding="utf_8_sig") as file:
+        text = file.read()
+
+    all_emails = re.findall(regex_email, text, flags=re.ASCII)
+    for i in re.finditer(regex_check_last_symbol, ' '.join(all_emails)):
+        emails.append(i[0])
+    for i in re.finditer(regex_check_on_point, ' '.join(emails)):
+        emails.remove(i[0])
+    for i in emails:
+        print(i, end=', ')
+
+
 task2()
