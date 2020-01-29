@@ -20,10 +20,11 @@ def task1():
             print(num, ':Fail')
 
 
-task1()
-
-
 def task2():
-    regex = '\w*\.*[^..]@[^..]|[^@@]|'
-    text = ""
-    a = re.findall(regex, text, flags=re.ASCII)
+    path_txt = '../Recourse/Input/tasks.txt'
+    with open(path_txt, 'r') as file:
+        text=file.read()
+        regex = '[\w*\'_-]+@[\w\d.\'_-]+'
+        emails = re.findall(regex, text, flags=re.ASCII)
+        print()
+task2()

@@ -28,3 +28,12 @@ task2
 считаем, что e-mail может быть частью «слова», то есть в boo@ya_ru мы видим адрес boo@ya, а в foo№boo@ya.ru видим boo@ya.ru.
 PS. Совсем не обязательно делать все проверки только регулярками. Регулярные выражения — это просто инструмент, который
  делает часть задач простыми. Не нужно делать их назад сложными :)
+ Ввод	Вывод
+Иван Иванович!
+Нужен ответ на письмо от ivanoff@ivan-chai.ru. Не забудьте поставить в копию serge'o-lupin@mail.ru- это важно.
+NO: foo.@ya.ru, foo@.ya.ru PARTLY: boo@ya_ru, -boo@ya.ru-, foo№boo@ya.ru
+ivanoff@ivan-chai.ru
+serge'o-lupin@mail.ru
+boo@ya
+boo@ya.ru
+boo@ya.ru
