@@ -2,8 +2,7 @@ import io, re
 from Source.pdfProcesser import get_output_path, parse_pdf
 
 
-def splitting_text_into_sentences():
-    pdf_path = r'..\Recourse\Input\fw9.pdf'
+def splitting_text_into_sentences(pdf_path):
     regex = ('[.!?]\s')
     with  io.open(get_output_path(pdf_path), 'w+', encoding="utf-8") as txt_file:
         text = parse_pdf(pdf_path)
@@ -19,5 +18,7 @@ def word_after_U_S():
     word = re.findall(regex_US, text)
     for i in word:
         print(i[1])
-
-word_after_U_S()
+if __name__=="main":
+    word_after_U_S()
+    pdf_path = r'..\Recourse\Input\fw9.pdf'
+    splitting_text_into_sentences(pdf_path)

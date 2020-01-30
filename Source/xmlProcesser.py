@@ -23,7 +23,6 @@ class XML_tags():
 def parse_XML(path_xml):
     tree = ET.parse(path_xml)
     root = tree.getroot()
-    print(tree)
     name = []
     tag_name = []
     tag_text = []
@@ -38,7 +37,10 @@ def parse_XML(path_xml):
         tag_text.append(text)
     return name, tag_name, tag_text
 
+def output_xml_data(path_file_xml):
+    name = parse_XML(path_file_xml)
+    file1 = XML_tags(name[0], name[1], name[2])
+    print(file1.output_value())
 
-name = parse_XML(path_file_xml)
-file1 = XML_tags(name[0], name[1], name[2])
-print(file1.output_value())
+if __name__=="main":
+    pass

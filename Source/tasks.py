@@ -1,7 +1,7 @@
 import re
 
 
-def task1():
+def task1_true_numbers():
     numbers = []
     regex_private = r'[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}'
     regex_taxi = r'[АВЕКМНОРСТУХ]{2}\d{3}\d{2,3}'
@@ -20,7 +20,7 @@ def task1():
             print(num, ':Fail')
 
 
-def task2():
+def task2_find_emails():
     path_txt = '../Recourse/Input/tasks.txt'
     emails = []
     regex_email = "[\d\w\'\._-]+[^\s.;'@,\-]@[^\s.;'@,\-][\d\w\'\._-]+"
@@ -37,5 +37,5 @@ def task2():
     for i in emails:
         print(i, end=', ')
 
-
-task2()
+if __name__=='main':
+    pass
