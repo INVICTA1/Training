@@ -18,7 +18,7 @@ def word_after_U_S():
     word = re.findall(regex_US, text)
     for i in word:
         print(i[1])
-if __name__=="main":
+if __name__=='__main__':
     word_after_U_S()
     pdf_path = r'..\Recourse\Input\fw9.pdf'
     splitting_text_into_sentences(pdf_path)

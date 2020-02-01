@@ -1,6 +1,6 @@
 import re, io
 from Source.pdfProcesser import get_output_path, parse_pdf
-
+from os import path
 
 # создать класс user
 
@@ -15,6 +15,7 @@ class User():
         return self.name, self.mobile_phone, self.email
 
 
+
 def parser_resume(resume_path):
     regex_name = (r'\w+\s\w+\s\w+')
     regex_email = (r'\w+\.\w+@\w+.com')
@@ -27,8 +28,8 @@ def parser_resume(resume_path):
         name = re.findall(regex_name, text)[0]
         return email, mobile_phone, name
 
-
-pdf_path = r'..\Recourse\Input\resume.pdf'
-data = parser_resume(pdf_path)
-maksim = User(data[0], data[1], data[2])
-print(maksim.to_string())
+if __name__=='__main__':
+    pdf_path = r'..\Recourse\Input\resume.pdf'
+    data = parser_resume(pdf_path)
+    maksim = User(data[0], data[1], data[2])
+    print(maksim.to_string())

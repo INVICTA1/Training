@@ -1,5 +1,5 @@
 import re
-
+from os import path
 
 def task1_true_numbers():
     numbers = []
@@ -20,8 +20,8 @@ def task1_true_numbers():
             print(num, ':Fail')
 
 
-def task2_find_emails():
-    path_txt = '../Recourse/Input/tasks.txt'
+def task2_find_emails(path_txt):
+
     emails = []
     regex_email = "[\d\w\'\._-]+[^\s.;'@,\-]@[^\s.;'@,\-][\d\w\'\._-]+"
     regex_check_last_symbol = '[^\s.+-][\w*\'\._-]+[^\s.+-]@[^\s.+-][\w\d\.\'_-]+[^.+\s-]'
@@ -34,8 +34,18 @@ def task2_find_emails():
         emails.append(i[0])
     for i in re.finditer(regex_check_on_point, ' '.join(emails)):
         emails.remove(i[0])
-    for i in emails:
-        print(i, end=', ')
+    return emails
 
-if __name__=='main':
-    pass
+def output_emails_in_file(path_txt):
+    emails=task2_find_emails(path_txt)
+    full_name = path.basename(path_txt)
+    name = path.splitext(full_name)[0]
+    way = "..\Recourse\Output\\" + name + ".txt"
+    with open(way,'w') as file_emails:
+        for i in emails:
+            file_emails.write(i+', ')
+
+
+if __name__=='__main__':
+    path_txt = '../Recourse/Input/tasks.txt'
+    output_emails_in_file(path_txt)

@@ -28,5 +28,5 @@ def get_output_path(resource_path):
     way = "..\Recourse\Output\\" + name + ".txt"
     return way
 
-if __name__=="main":
+if __name__=='__main__':
     pass

@@ -1,0 +1,24 @@
+
+Address
+Name:Ellen Adams
+Street:123 Maple Street
+City:None
+State:CA
+Zip:10999
+Country:USA
+
+Address
+Name:Tai Yee
+Street:8 Oak Avenue
+City:Old Town
+State:PA
+Zip:95819
+Country:USA
+
+DeliveryNotes
+
+Items
+ProductName:Lawnmower
+Quantity:1
+USPrice:148.95
+Comment:Confirm this is electric
