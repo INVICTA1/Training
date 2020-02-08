@@ -47,4 +47,5 @@ with closing(pymysql.connect(
         # data = [('alan', 'woker', 30, 'm', 20054), ('ala', 'poker', 54, 'w', 2054)]
         # insert_into_table(data)
         # update_table(20400)
-        create_table()
+        if __name__ == "__main__":
+            create_table()
